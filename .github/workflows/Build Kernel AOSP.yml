@@ -267,7 +267,7 @@ jobs:
           #ifndef _LINUX_GET_PROP_FROM_CMDLINE_H
           #define _LINUX_GET_PROP_FROM_CMDLINE_H
 
-          char *get_property_from_cmdline(const char *input);
+          char *__init get_property_from_cmdline(const char *input);
 
           #endif /* _LINUX_GET_PROP_FROM_CMDLINE_H */
           EOF
@@ -279,7 +279,7 @@ jobs:
           #include <linux/string.h>
           #include <linux/kernel.h>
 
-          char *get_property_from_cmdline(const char *input)
+          char *__init get_property_from_cmdline(const char *input)
           {
               static char value_buf[256];
               const size_t len = strlen(input);
