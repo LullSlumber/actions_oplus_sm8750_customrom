@@ -278,11 +278,10 @@ jobs:
           #include <linux/init.h>
           #include <linux/string.h>
           #include <linux/kernel.h>
-          #include <asm/setup.h>
 
           char *get_property_from_cmdline(const char *input)
           {
-              static char value_buf[COMMAND_LINE_SIZE];
+              static char value_buf[256];
               const size_t len = strlen(input);
               const char *p = boot_command_line;
 
